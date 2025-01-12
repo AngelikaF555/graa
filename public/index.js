@@ -1,6 +1,7 @@
 // Hämta bakgrundselementet
 const image = document.querySelector('.background');
-const logo = document.querySelector('.company-name')
+const logo = document.querySelector('.header');
+const copyrightContainer = document.querySelector('.copyright')
 
 // Funktion för att byta mask
 function changeMask(maskClass) {
@@ -46,3 +47,16 @@ logo.addEventListener('click', () => {
         document.getElementById(id).style.display = 'none';
     });
 });
+
+//Function for adding copyright to footer
+function updateCopyright() {
+    const currentYear = new Date().getFullYear();
+    const copyrightText = `© ${currentYear} Grå`;
+  
+    const copyrightElement = document.getElementById("copyright");
+    if (copyrightElement) {
+        copyrightElement.textContent = copyrightText;
+    }
+}
+  
+document.addEventListener("DOMContentLoaded", updateCopyright);
