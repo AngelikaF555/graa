@@ -1,6 +1,7 @@
 // Hämta bakgrundselementet
 const image = document.querySelector('.background');
-const logo = document.querySelector('.header');
+const logo = document.querySelector('.header h1');
+const description = document.querySelector('.header h2');
 const copyrightContainer = document.querySelector('.copyright')
 
 // Funktion för att byta mask
@@ -27,6 +28,7 @@ Object.keys(menuLinks).forEach(linkId => {
     
     link.addEventListener('click', () => {
         logo.classList.add('small');
+        description.style.display='none';
         // Hide all cards
         Object.values(menuLinks).forEach(id => {
             document.getElementById(id).style.display = 'none';
@@ -41,6 +43,7 @@ Object.keys(menuLinks).forEach(linkId => {
 logo.addEventListener('click', () => {
     image.classList.remove('mask2');
     logo.classList.remove('small');
+    description.style.display='block';
 
     // Hide all cards
     Object.values(menuLinks).forEach(id => {
